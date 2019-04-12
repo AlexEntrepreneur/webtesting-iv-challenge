@@ -14,10 +14,12 @@ describe('Users Router', () => {
         .get('/api/users')
         .expect(/\[.+\]/g);
     });
+  });
 
+  describe('POST /api/users Endpoint', () => {
     it('should accept post request', () => {
       return request(usersRouter)
-        .post('/api/users', { 'name': 'Yoda'})
+        .post('/api/users')
         .expect(200);
     });
 
